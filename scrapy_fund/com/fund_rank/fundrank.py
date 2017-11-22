@@ -38,7 +38,8 @@ def save_fund(data_array,category):
        threeyear=clean_data(data[13])
        thisyear=clean_data(data[14])
        setup=clean_data(data[15]) 
-       insertSQL=" insert into fund_rank(fund_id,fund_name,fund_name_abbr,cal_date,net_asset_value,accumulative,oneday,oneweek,onemonth,threemonth,sixmonth,oneyear,twoyear,threeyear,thisyear,setup,category) values("+fund_id+","+fund_name+","+fund_name_abbr+","+cal_date+","+net_asset_value+","+accumulative+","+one_day+","+one_week+","+onemonth+","+threemonth+","+sixmonth+","+oneyear+","+twoyear+","+threeyear+","+thisyear+","+setup+",'"+category+"')"
+       score=0
+       insertSQL=" insert into fund_rank(fund_id,fund_name,fund_name_abbr,cal_date,net_asset_value,accumulative,oneday,oneweek,onemonth,threemonth,sixmonth,oneyear,twoyear,threeyear,thisyear,setup,category,score) values("+fund_id+","+fund_name+","+fund_name_abbr+","+cal_date+","+net_asset_value+","+accumulative+","+one_day+","+one_week+","+onemonth+","+threemonth+","+sixmonth+","+oneyear+","+twoyear+","+threeyear+","+thisyear+","+setup+",'"+category+"',"+str(score)+")"
        print(insertSQL)
        cur.execute(insertSQL)
        conn.commit()
